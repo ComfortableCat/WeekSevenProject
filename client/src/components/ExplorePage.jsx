@@ -9,7 +9,9 @@ export default function ExplorePage() {
   const [links, setLinks] = useState([]);
   useEffect(() => {
     async function getTopicsCount() {
-      const response = await fetch("http://localhost:8080/topiccount");
+      const response = await fetch(
+        "https://weeksevenproject.onrender.com/topiccount"
+      );
       const topicCount = await response.json();
       let currentlinks = [];
       for (let i = 0; i < topicCount[0].count / 10; i++) {

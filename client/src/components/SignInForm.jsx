@@ -13,7 +13,7 @@ export default function SignInForm() {
     if (data.username !== "" && data.password !== "") {
       if (createUser === false) {
         const response = await fetch(
-          `http://localhost:8080/users?username=${data.username}&password=${data.password}`
+          `https://weeksevenproject.onrender.com/users?username=${data.username}&password=${data.password}`
         );
         const json = await response.json();
         const userInfo = await json[0];
@@ -30,13 +30,16 @@ export default function SignInForm() {
         }
       } else {
         if (data.password === data.confirmPassword) {
-          const response = await fetch("http://localhost:8080/users", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          });
+          const response = await fetch(
+            "https://weeksevenproject.onrender.com/users",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            }
+          );
           const success = await response.json();
           if (success === "User Created") {
             setUser(data);

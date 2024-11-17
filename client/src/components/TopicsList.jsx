@@ -12,7 +12,7 @@ export default function TopicsList({ number, asc, byPopular, offset }) {
   useEffect(() => {
     async function getTopics() {
       const response = await fetch(
-        `http://localhost:8080/topicslist?number=${number}&asc=${asc}&pop=${byPopular}&offset=${offset}`
+        `https://weeksevenproject.onrender.com/topicslist?number=${number}&asc=${asc}&pop=${byPopular}&offset=${offset}`
       );
 
       setTopics(await response.json());

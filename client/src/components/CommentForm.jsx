@@ -12,13 +12,16 @@ export default function CommentForm({ parentId, topicId }) {
       data.topicId = topicId;
       data.userId = user.id;
 
-      const response = await fetch("http://localhost:8080/replies", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://weeksevenproject.onrender.com/replies",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       window.location.reload();
     } else {
       //SHOW ERROR OR SOMETHING

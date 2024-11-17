@@ -14,7 +14,9 @@ export default function TopicPage() {
 
   useEffect(() => {
     async function getTopic() {
-      const response = await fetch(`http://localhost:8080/topic?id=${id}`);
+      const response = await fetch(
+        `https://weeksevenproject.onrender.com/topic?id=${id}`
+      );
       const topicResponse = await response.json();
       setTopic(topicResponse[0]);
     }
@@ -24,7 +26,7 @@ export default function TopicPage() {
   useEffect(() => {
     async function getComments() {
       const response = await fetch(
-        `http://localhost:8080/replies?topicId=${id}`
+        `https://weeksevenproject.onrender.com/replies?topicId=${id}`
       );
       const replies = await response.json();
 

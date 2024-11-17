@@ -12,13 +12,16 @@ export default function CreateTopic() {
     const data = Object.fromEntries(formData);
     if (data.title !== "") {
       data.id = user.id;
-      const response = await fetch(`http://localhost:8080/topic`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `https://weeksevenproject.onrender.com/topic`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       const json = await response.json();
       console.log(json);
       if (json === "exists") {
@@ -27,7 +30,7 @@ export default function CreateTopic() {
         console.log("exists");
       } else if (typeof json[0].id === "number") {
         window.location.assign(
-          `http://127.0.0.1:5173/talkingpoints/${json[0].id}`
+          `https://weeksevenproject-client.onrender.com/talkingpoints/${json[0].id}`
         );
       } else {
         console.log("escaped");

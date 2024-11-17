@@ -26,8 +26,6 @@ app.get("/users", async (req, res) => {
 
 app.post("/users", async (req, res) => {
   const { username, password } = req.body;
-  console.log(req.body);
-  console.log("username", username, "  password", password);
   const result = await db.query("SELECT * FROM users WHERE username = $1", [
     username,
   ]);
@@ -49,14 +47,14 @@ app.post("/users", async (req, res) => {
 
 app.get("/topicslist", async (req, res) => {
   const { number, asc, pop, offset } = req.query;
-  console.log();
+
   if (pop === "true") {
     const response = await db.query(
       "SELECT count(*), topics.id , topics.title FROM topics JOIN comments on topics.id = comments.topic_id GROUP BY topics.id ORDER BY 1 DESC LIMIT $1;",
       [number]
     );
     const topPosts = await response.rows;
-    console.log(topPosts);
+
     res.json(topPosts);
   } else {
     const response = await db.query(
@@ -64,7 +62,7 @@ app.get("/topicslist", async (req, res) => {
       [number, offset]
     );
     const topPosts = await response.rows;
-    console.log("NOT POP", topPosts);
+
     res.json(topPosts);
   }
 });
@@ -87,7 +85,7 @@ app.get("/topic", async (req, res) => {
 
 app.post("/topic", async (req, res) => {
   const data = req.body;
-  console.log(data);
+
   //CHECK IF TITLE + ID IS UNIQUE
   if (data.id !== null && data.id !== undefined) {
     const response = await db.query(
@@ -95,7 +93,7 @@ app.post("/topic", async (req, res) => {
       [data.id, data.title]
     );
     const exists = await response.rows;
-    console.log(exists);
+
     if (exists.length === 0) {
       await db.query(
         "INSERT INTO topics (user_id, title, content) VALUES ($1,$2,$3)",
@@ -115,7 +113,7 @@ app.post("/topic", async (req, res) => {
 
 app.get("/replies", async (req, res) => {
   let { topicId, parentId } = req.query;
-  console.log(parentId);
+
   if (parentId === undefined) {
     const response = await db.query(
       `SELECT
