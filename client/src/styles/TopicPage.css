@@ -1,0 +1,46 @@
+.replyContainer {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+}
+
+.subreply {
+  width: 50vw;
+  align-self: flex-end;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  margin: auto;
+}
+
+.topic {
+  width: 70vw;
+  margin: 5px auto;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 0 15px;
+}
+
+.topic * {
+  padding: 5px;
+  margin: 0;
+}
+
+.comments {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 70vw;
+  margin: 5px auto;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 0 15px;
+}

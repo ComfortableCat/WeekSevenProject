@@ -1,0 +1,30 @@
+.welcomeContainer {
+  width: 70vw;
+  margin: 5px auto;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 0 15px;
+}
+
+.welcomeContainer * {
+  margin: 10px;
+}
+
+.fiveTopics {
+  width: 70vw;
+  margin: auto;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.fiveTopics p {
+  margin: 0;
+}

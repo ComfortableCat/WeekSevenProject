@@ -1,0 +1,56 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 15vh;
+  border-bottom: 4px solid gray;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.headerlinks {
+  min-width: 50vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+  text-align: center;
+}
+
+.signInForm {
+  position: absolute;
+  top: 15vh;
+  right: 0;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.signInForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.account {
+  text-align: end;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 15vh;
+  right: 0;
+  height: 85vh;
+  width: 20vw;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+.account .accountlinks {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  gap: 10px;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+}

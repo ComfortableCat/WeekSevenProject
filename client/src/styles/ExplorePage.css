@@ -1,0 +1,31 @@
+.tenTopics {
+  width: 70vw;
+  margin: 10px auto;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.tenTopics p {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  color: blue;
+  text-decoration: underline;
+}
+
+nav a {
+  padding: 0 5px;
+}
+
+nav a:hover {
+  color: rgb(35, 80, 214);
+  cursor: pointer;
+}

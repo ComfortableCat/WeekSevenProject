@@ -1,0 +1,14 @@
+form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.formContainer {
+  margin: auto;
+  padding: 10px;
+  width: 60vw;
+  border-radius: 15px;
+  border: 2px solid black;
+}
